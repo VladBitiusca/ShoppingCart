@@ -101,6 +101,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "PatchBasket",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"close\": true,\r\n    \"payed\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Baskets/281de4c6-4eef-4b49-1e32-08d9db30f642",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Baskets",
+						"281de4c6-4eef-4b49-1e32-08d9db30f642"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
