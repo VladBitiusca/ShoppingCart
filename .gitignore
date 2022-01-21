@@ -9,3 +9,4 @@
 /ShoppingCart.Api/bin/Debug/netcoreapp3.1
 /ShoppingCart.Repository/bin/Debug/netcoreapp3.1
 /ShoppingCart.Service/bin/Debug/netcoreapp3.1
+/ShoppingCart.Repository.Test/obj
