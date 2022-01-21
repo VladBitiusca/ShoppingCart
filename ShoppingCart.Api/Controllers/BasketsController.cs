@@ -2,6 +2,7 @@
 using ShoppingCart.Service.Interfaces;
 using ShoppingCart.Service.Models;
 using System;
+using System.Collections.Generic;
 
 namespace ShoppingCart.Api.Controllers
 {
@@ -16,6 +17,12 @@ namespace ShoppingCart.Api.Controllers
             _basketsService = basketsService;
         }
 
+        [HttpGet]
+        public ActionResult<IList<BasketDto>> GetAll()
+        {
+            return Ok(_basketsService.GetAll());
+        }
+
         [HttpPost]
         public IActionResult CreateBasket(BasketDto basket)
         {
@@ -25,17 +32,21 @@ namespace ShoppingCart.Api.Controllers
         }
 
         [HttpPut("{id}/article-line")]
-        public IActionResult UpdateArticleLine(Guid id)
+        public ActionResult<BasketDto> UpdateArticleLine(Guid id, [FromBody]ArticleDto article)
         {
-
-            return NoContent();
+            return Ok(_basketsService.UpdateArticles(id, article));
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetBasket(Guid id)
+        public ActionResult<ResponseBasket> GetBasket(Guid id)
         {
-            var result = new ResponseBasket();
-            return Ok(result);
+            var response = _basketsService.GetBasket(id);
+            if (response == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(response);
         }
 
         [HttpPatch("{id}")]

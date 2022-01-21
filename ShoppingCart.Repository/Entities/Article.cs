@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoppingCart.Service.Models;
+using System;
 
 namespace ShoppingCart.Repository.Entities
 {
@@ -11,5 +12,15 @@ namespace ShoppingCart.Repository.Entities
         public long Price { get; set; }
 
         public virtual Basket Basket { get; set; }
+
+        public ArticleDto MapToDto()
+        {
+            return new ArticleDto
+            {
+                Id = Id,
+                Item = Item,
+                Price = Price,
+            };
+        }
     }
 }
