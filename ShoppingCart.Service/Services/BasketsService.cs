@@ -30,6 +30,11 @@ namespace ShoppingCart.Service.Services
             return _basketsRepository.GetBasket(id);
         }
 
+        public BasketDto PartialUpdate(Guid id, BasketDto basket)
+        {
+            return _basketsRepository.PartialUpdate(id, basket);
+        }
+
         public BasketDto UpdateArticles(Guid basketId, ArticleDto article)
         {
             return _basketsRepository.UpdateArticles(basketId, article);

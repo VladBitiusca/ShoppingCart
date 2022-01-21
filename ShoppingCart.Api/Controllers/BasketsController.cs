@@ -50,9 +50,16 @@ namespace ShoppingCart.Api.Controllers
         }
 
         [HttpPatch("{id}")]
-        public IActionResult UpdateBasket(Guid id)
+        public ActionResult<BasketDto> UpdateBasket(Guid id, BasketDto basket)
         {
-            return Ok();
+            var response = _basketsService.PartialUpdate(id, basket);
+
+            if (response == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(response);
         }
     }
 }

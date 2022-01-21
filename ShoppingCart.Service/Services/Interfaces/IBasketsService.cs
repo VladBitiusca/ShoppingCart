@@ -13,5 +13,7 @@ namespace ShoppingCart.Service.Interfaces
         BasketDto UpdateArticles(Guid basketId, ArticleDto article);
         
         ResponseBasket GetBasket(Guid id);
+        
+        BasketDto PartialUpdate(Guid id, BasketDto basket);
     }
 }

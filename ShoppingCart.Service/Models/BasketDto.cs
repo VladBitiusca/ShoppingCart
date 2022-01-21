@@ -11,6 +11,10 @@ namespace ShoppingCart.Service.Models
 
         public bool PaysVAT { get; set; }
 
+        public bool Close { get; set; }
+
+        public bool Payed { get; set; }
+
         public IList<ArticleDto> Articles { get; set; } = new List<ArticleDto>();
     }
 }

@@ -59,6 +59,24 @@ namespace ShoppingCart.Repository.DataAccess
             };
         }
 
+        public BasketDto PartialUpdate(Guid id, BasketDto basket)
+        {
+            var entity = GetById(id);
+
+            if (entity == null)
+            {
+                return null;
+            }
+
+            entity.Close = basket.Close;
+            entity.Payed = basket.Payed;
+
+            _context.Update(entity);
+            _context.SaveChanges();
+
+            return GetById(id).MapToDto();
+        }
+
         public BasketDto UpdateArticles(Guid basketId, ArticleDto article)
         {
             var basket = GetById(basketId);

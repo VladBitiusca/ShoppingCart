@@ -10,6 +10,10 @@ namespace ShoppingCart.Repository.Entities
 
         public bool PaysVAT { get; set; }
 
+        public bool Close { get; set; }
+
+        public bool Payed { get; set; }
+
         public virtual IList<Article> Articles { get; set; } = new List<Article>();
 
         public BasketDto MapToDto()
@@ -19,6 +23,8 @@ namespace ShoppingCart.Repository.Entities
                 Id = Id,
                 Customer = Customer,
                 PaysVAT = PaysVAT,
+                Close = Close,
+                Payed = Payed,
                 Articles = Articles.Select(a => a.MapToDto()).ToList()
             };
         }
