@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "7477b63b-6bdb-49be-8c5f-68a5df7e5c4d",
+		"name": "ShoppingCart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBasketById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/Baskets/281de4c6-4eef-4b49-1e32-08d9db30f642",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Baskets",
+						"281de4c6-4eef-4b49-1e32-08d9db30f642"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutBasketId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"item\" : \"tomato\", \r\n    \"price\" : 20 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Baskets/281de4c6-4eef-4b49-1e32-08d9db30f642/article-line",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Baskets",
+						"281de4c6-4eef-4b49-1e32-08d9db30f642",
+						"article-line"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostBasket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\": \"Vlad\",\r\n    \"paysVAT\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/Baskets",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Baskets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllBaskets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/Baskets",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Baskets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
